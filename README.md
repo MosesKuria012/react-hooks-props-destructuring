@@ -33,7 +33,7 @@ function MovieCard() {
       <h2>Mad Max: Fury Road</h2>
       <small>Genres: Action, Adventure, Science Fiction, Thriller</small>
     </div>
-  );
+  )
 }
 ```
 
@@ -66,17 +66,17 @@ using props:
 ```jsx
 // parent component
 function App() {
-  const title = "Mad Max";
+  const title = 'Mad Max'
   const posterURL =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn1OTYGz2GDC1XjA9tirh_1Rd571yE5UFIYsmZp4nACMd7CCHM";
-  const genresArr = ["Action", "Adventure", "Science Fiction", "Thriller"];
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn1OTYGz2GDC1XjA9tirh_1Rd571yE5UFIYsmZp4nACMd7CCHM'
+  const genresArr = ['Action', 'Adventure', 'Science Fiction', 'Thriller']
 
   return (
     <div className="App">
       {/* passing down props from the parent component */}
       <MovieCard title={title} posterSrc={posterURL} genres={genresArr} />
     </div>
-  );
+  )
 }
 
 // child component
@@ -85,9 +85,9 @@ function MovieCard(props) {
     <div className="movie-card">
       <img src={props.posterSrc} alt={props.title} />
       <h2>{props.title}</h2>
-      <small>{props.genres.join(", ")}</small>
+      <small>{props.genres.join(', ')}</small>
     </div>
-  );
+  )
 }
 ```
 
@@ -107,9 +107,9 @@ function MovieCard({ title, posterSrc, genres }) {
     <div className="movie-card">
       <img src={posterSrc} alt={title} />
       <h2>{title}</h2>
-      <small>{genres.join(", ")}</small>
+      <small>{genres.join(', ')}</small>
     </div>
-  );
+  )
 }
 ```
 
@@ -131,9 +131,9 @@ function MovieCard(props) {
     <div className="movie-card">
       <img src={props.posterSrc} alt={props.title} />
       <h2>{props.title}</h2>
-      <small>{props.genres.join(", ")}</small>
+      <small>{props.genres.join(', ')}</small>
     </div>
-  );
+  )
 }
 
 // With Destructuring
@@ -142,9 +142,9 @@ function MovieCard({ title, posterSrc, genres }) {
     <div className="movie-card">
       <img src={posterSrc} alt={title} />
       <h2>{title}</h2>
-      <small>{genres.join(", ")}</small>
+      <small>{genres.join(', ')}</small>
     </div>
-  );
+  )
 }
 ```
 
@@ -162,15 +162,15 @@ contain nested objects. For example:
 ```jsx
 function App() {
   const socialLinks = {
-    github: "https://github.com/liza",
-    linkedin: "https://www.linkedin.com/in/liza/",
-  };
+    github: 'https://github.com/liza',
+    linkedin: 'https://www.linkedin.com/in/liza/',
+  }
 
   return (
     <div>
       <SocialMedia links={socialLinks} />
     </div>
-  );
+  )
 }
 
 function SocialMedia({ socialLinks }) {
@@ -179,7 +179,7 @@ function SocialMedia({ socialLinks }) {
       <a href={socialLinks.github}>{socialLinks.github}</a>
       <a href={socialLinks.linkedin}>{socialLinks.linkedin}</a>
     </div>
-  );
+  )
 }
 ```
 
@@ -188,14 +188,14 @@ cleaner, either by destructuring in the body of the function:
 
 ```jsx
 function SocialMedia({ socialLinks }) {
-  const { github, linkedin } = socialLinks;
+  const { github, linkedin } = socialLinks
 
   return (
     <div>
       <a href={github}>{github}</a>
       <a href={linkedin}>{linkedin}</a>
     </div>
-  );
+  )
 }
 ```
 
@@ -208,7 +208,7 @@ function SocialMedia({ socialLinks: { github, linkedin } }) {
       <a href={github}>{github}</a>
       <a href={linkedin}>{linkedin}</a>
     </div>
-  );
+  )
 }
 ```
 
@@ -238,15 +238,15 @@ destructured props:
 function MovieCard({
   title,
   genres,
-  posterSrc = "https://m.media-amazon.com/images/M/MV5BOTJjNzczMTUtNzc5MC00ODk0LWEwYjgtNzdiOTEyZmQxNzhmXkEyXkFqcGdeQXVyNzMzMjU5NDY@._V1_UY268_CR1,0,182,268_AL_.jpg",
+  posterSrc = 'https://m.media-amazon.com/images/M/MV5BOTJjNzczMTUtNzc5MC00ODk0LWEwYjgtNzdiOTEyZmQxNzhmXkEyXkFqcGdeQXVyNzMzMjU5NDY@._V1_UY268_CR1,0,182,268_AL_.jpg',
 }) {
   return (
     <div className="movie-card">
       <img src={posterSrc} alt={title} />
       <h2>{title}</h2>
-      <small>{genres.join(", ")}</small>
+      <small>{genres.join(', ')}</small>
     </div>
-  );
+  )
 }
 ```
 
@@ -261,15 +261,15 @@ component:
 
 ```jsx
 function App() {
-  const title = "Mad Max";
-  const genresArr = ["Action", "Adventure", "Science Fiction", "Thriller"];
+  const title = 'Mad Max'
+  const genresArr = ['Action', 'Adventure', 'Science Fiction', 'Thriller']
 
   return (
     <div className="App">
       {/* posterSrc is omitted, so the default value will be used instead */}
       <MovieCard title={title} genres={genresArr} />
     </div>
-  );
+  )
 }
 ```
 
